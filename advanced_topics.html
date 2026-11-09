@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+
+  <title>Intellectual History: Advanced Specialization Tracks</title>
+  <meta name="description" content="Intellectual History: Advanced Specialization Tracks curriculum by hocbigg.">
+  <meta name="author" content="hocbigg">
+
+  <link rel="canonical" href="https://hocbigg.github.io/intellectual-history/advanced_topics.html">
+  <meta property="og:title" content="Intellectual History: Advanced Specialization Tracks">
+  <meta property="og:description" content="Intellectual History: Advanced Specialization Tracks curriculum by hocbigg.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hocbigg.github.io/intellectual-history/advanced_topics.html">
+  <link rel="icon" href="https://hocbigg.github.io/images/favicon.ico">
+
+  <style>
+:root {
+  color-scheme: light dark;
+
+  --bg: #ffffff;
+  --fg: #1a1a1a;
+  --muted: #595959;
+  --border: #e0e0e0;
+  --th-bg: #f6f8fa;
+  --code-bg: #f4f4f4;
+  --link: #0969da;
+  --focus-ring: #0969da;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d1117;
+    --fg: #e6edf3;
+    --muted: #8b949e;
+    --border: #30363d;
+    --th-bg: #161b22;
+    --code-bg: #161b22;
+    --link: #58a6ff;
+    --focus-ring: #58a6ff;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 1.5rem auto;
+  max-width: 60rem;
+  padding: 0 1rem 3.5rem;
+  background-color: var(--bg);
+  color: var(--fg);
+  font: 1.15rem/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  
+  /* Cú pháp hiện đại thay thế cho word-wrap */
+  overflow-wrap: break-word;
+}
+
+.site-header {
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 0.5rem 1.25rem;
+  font-size: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+nav a:hover, 
+nav a:focus-visible {
+  color: var(--fg);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+nav .nav-brand {
+  color: var(--fg);
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+
+.skip-link {
+  position: absolute;
+  transform: translateY(-150%);
+  left: 1rem;
+  background: var(--fg);
+  color: var(--bg);
+  padding: 0.5rem 1rem;
+  z-index: 100;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(1rem);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.3;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--fg);
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 2rem;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid var(--border);
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1.15rem;
+}
+
+h6 {
+  font-size: 1rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+p, ul, ol, blockquote, table {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}
+
+li > ul,
+li > ol {
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+}
+
+li {
+  margin-bottom: 0.25rem;
+}
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+a:has(img) {
+  text-decoration: none;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.page-header .page-subtitle {
+  color: var(--muted);
+  font-size: 1.15rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.page-header img {
+  margin: 0 auto 1rem;
+  display: block;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.875em;
+  background-color: var(--code-bg);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+
+pre {
+  background-color: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  tab-size: 2;
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+  border: none;
+  font-size: 0.9rem;
+  border-radius: 0;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th, td {
+  border: 1px solid var(--border);
+  padding: 0.6rem 0.75rem;
+  vertical-align: top;
+}
+
+th {
+  background-color: var(--th-bg);
+  font-weight: 600;
+}
+
+blockquote {
+  margin-inline: 0;
+  border-left: 4px solid var(--border);
+  padding-left: 1rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  body {
+    max-width: none;
+    color: #000;
+    background: #fff;
+  }
+  .skip-link, nav {
+    display: none;
+  }
+}
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <nav aria-label="Main Navigation">
+    <ul>
+      <li><a href="https://hocbigg.github.io/" class="nav-brand">Hocbigg</a></li>
+      <li><a href="/intellectual-history/">Intellectual History</a></li>
+      <li><a href="/intellectual-history/advanced_topics.html">Advanced Topics</a></li>
+      <li><a href="/intellectual-history/projects.html">Projects</a></li>
+      <li><a href="https://github.com/hocbigg/intellectual-history" target="_blank" rel="noopener noreferrer">GitHub<span class="sr-only"> (opens in new tab)</span></a></li>
+    </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <article>
+
+<h1 id="intellectual-history-advanced-specialization-tracks">Intellectual History: Advanced Specialization Tracks</h1>
+<p>Advanced study in intellectual history branches out from general historical surveys into specialized historiographical paradigms, regional conceptual systems, and long-range thematic debates. Independent learners should select one or two tracks that align with their personal research interests rather than attempting to complete all tracks sequentially.</p>
+<h3 id="specialization-tracks">Specialization Tracks</h3>
+<ul>
+<li><strong>Advanced Historiographical Methods: Contextualism, Conceptual History, and the Material Turn</strong>: Explores professional methodologies including the Cambridge School linguistic approach, German <em>Begriffsgeschichte</em>, genealogical critique, and the history of material texts.</li>
+<li><strong>Global and Transnational Intellectual History</strong>: Examines how political, economic, and philosophical ideas travel across borders, mutate in colonial contexts, and get contested through postcolonial frameworks.</li>
+<li><strong>Political Thought, Political Economy, and Imperial Ideologies</strong>: Analyzes the historical co-emergence of commercial capitalism, classical republicanism, national consciousness, and the ideologies of imperial governance.</li>
+<li><strong>Science, Religion, and the Secularization Thesis</strong>: Investigates how modern categories of "science" and "religion" were historically constructed and evaluates competing arguments surrounding the secularization of the Western mind.</li>
+</ul>
+<h2 id="advanced-historiographical-methods-contextualism-conceptual-history-and-the-material-turn">Advanced Historiographical Methods: Contextualism, Conceptual History, and the Material Turn</h2>
+<p>Explores the core methodological traditions shaping modern scholarship, from linguistic contextualism and conceptual semantics to genealogical critique and the material history of the book.</p>
+<p>Contextualism and Neo-Roman Liberty: <a href="https://archive.org/details/quentin-skinner-liberty-before-liberalism" target="_blank" rel="noopener noreferrer">Liberty before Liberalism (Quentin Skinner, Internet Archive)</a> - Demonstrates the practical application of the Cambridge School contextualist method to excavate the pre-liberal republican conception of freedom as non-domination.</p>
+<p>Classical Republicanism and Political Languages: <a href="https://books.google.com/books?isbn=9780691172231" target="_blank" rel="noopener noreferrer">The Machiavellian Moment: Florentine Political Thought and the Atlantic Republican Tradition (J.G.A. Pocock, Google Books)</a> - The landmark study demonstrating Pocock's linguistic paradigm by tracking the vocabulary of civic virtue, fortune, and corruption from Renaissance Italy to Anglo-American constitutionalism.</p>
+<p>Conceptual History (Begriffsgeschichte): <a href="https://books.google.com/books?isbn=9780231127714" target="_blank" rel="noopener noreferrer">Futures Past: On the Semantics of Historical Time (Reinhart Koselleck, Google Books)</a> - The foundational text of German conceptual history, establishing how modernity transformed the horizon of expectation and space of experience during the transitional <em>Sattelzeit</em>.</p>
+<p>The Genealogical Method in Intellectual History: <a href="https://www.youtube.com/watch?v=PjQ-W2-fKUs" target="_blank" rel="noopener noreferrer">A Genealogy of Liberty (Quentin Skinner, Stanford Humanities Center / YouTube)</a> - A master lecture demonstrating how historical genealogy serves as an ideological critique by uncovering alternative definitions of political freedom eclipsed by modern liberalism.</p>
+<p>History of the Book and Material Texts: <a href="https://www.youtube.com/watch?v=E10hbZXHHm4" target="_blank" rel="noopener noreferrer">Robert Darnton: The Case for Books (WGBH Forum / Harvard Book Store, YouTube)</a> - An authoritative lecture by an intellectual pioneer in book history examining how the material mechanics of printing, piracy, and reading practices actively shape the diffusion of ideas.</p>
+<h2 id="global-and-transnational-intellectual-history">Global and Transnational Intellectual History</h2>
+<p>Explores how concepts and philosophical systems circulate across borders, mutate in colonial contact zones, and challenge Eurocentric historiographical paradigms.</p>
+<p>Methodology of Global Intellectual History: <a href="https://books.google.com/books?isbn=9780231160490" target="_blank" rel="noopener noreferrer">Global Intellectual History (Samuel Moyn and Andrew Sartori, eds., Google Books)</a> - The field-defining volume that establishes theoretical models for tracing concept circulation, universalization, and friction across geopolitical borders.</p>
+<p>Postcolonial Critique and Alternative Modernities: <a href="https://archive.org/details/provincializinge0000chak" target="_blank" rel="noopener noreferrer">Provincializing Europe: Postcolonial Thought and Historical Difference (Dipesh Chakrabarty, Internet Archive)</a> - The landmark postcolonial intervention demonstrating why European categories of historical time, secularism, and political modernity must be provincialized when analyzing non-Western societies.</p>
+<p>Islamic Epistemology and Colonial Modernity: <a href="https://books.google.com/books?isbn=9780231187626" target="_blank" rel="noopener noreferrer">Restating Orientalism: A Critique of Modern Knowledge (Wael B. Hallaq, Google Books)</a> - An advanced interrogation of the modern Western episteme, showing how Enlightenment conceptions of sovereignty, science, and the state reshaped and displaced Islamic intellectual traditions.</p>
+<p>Anticolonial Worldmaking and Decolonization: <a href="https://www.youtube.com/watch?v=dSn1chIXiZc" target="_blank" rel="noopener noreferrer">Worldmaking after Empire: The Rise and Fall of Self-Determination (Adom Getachew, King's College London / YouTube)</a> - An in-depth recorded lecture analyzing how Black Atlantic anticolonial thinkers redefined self-determination not merely as nation-building, but as the creation of an egalitarian, post-imperial international order.</p>
+<h2 id="political-thought-political-economy-and-imperial-ideologies">Political Thought, Political Economy, and Imperial Ideologies</h2>
+<p>Examines the intellectual foundations of market societies, modern statehood, the rise of the nation-form, and the ideological entanglements between liberal theory and imperial expansion.</p>
+<p>Political Economy and Commercial Society: <a href="https://books.google.com/books?isbn=9780674055773" target="_blank" rel="noopener noreferrer">Jealousy of Trade: International Competition and the Nation-State in Historical Perspective (Istvan Hont, Google Books)</a> - The definitive historical study analyzing how early modern political thought and eighteenth-century political economy transformed interstate commerce from a promise of peace into a new form of warfare.</p>
+<p>Nationalism as an Intellectual Formation: <a href="https://archive.org/details/imaginedcommunit00ande" target="_blank" rel="noopener noreferrer">Imagined Communities: Reflections on the Origin and Spread of Nationalism (Benedict Anderson, Internet Archive)</a> - The classic study analyzing how vernacularization, print-capitalism, and changing concepts of temporality made the modern nation imaginable.</p>
+<p>Liberalism and Imperial Governance: <a href="https://books.google.com/books?isbn=9780226518824" target="_blank" rel="noopener noreferrer">Liberalism and Empire: A Study in Nineteenth-Century British Liberal Thought (Uday Singh Mehta, Google Books)</a> - A foundational critique showing how nineteenth-century British liberal universalism generated ideological justifications for imperial domination.</p>
+<p>Concept of the Modern State: Hobbes and the Person of the State - Quentin Skinner (University College Dublin / YouTube; search 'Hobbes and the Person of the State Quentin Skinner' on YouTube) - An essential recorded lecture tracing the historical emergence of the state as an abstract legal person distinct from both the ruler and the ruled.</p>
+<h2 id="science-religion-and-the-secularization-thesis">Science, Religion, and the Secularization Thesis</h2>
+<p>Investigates how modern categories of "science" and "religion" were historically constructed and evaluates competing arguments surrounding the secularization of the Western mind.</p>
+<p>The Historical Demarcation of Science and Religion: <a href="https://www.youtube.com/watch?v=yBElQ4fPr5Q" target="_blank" rel="noopener noreferrer">The Territories of Science and Religion (Peter Harrison, University of Edinburgh Gifford Lectures)</a> - The opening Gifford Lecture demonstrating that "science" and "religion" were reified into distinct institutional and conceptual categories only in the modern era, undermining the perennial conflict thesis.</p>
+<p>Secularization Theory and the Immanent Frame: <a href="https://books.google.com/books?isbn=9780674026766" target="_blank" rel="noopener noreferrer">A Secular Age (Charles Taylor, Google Books)</a> - The monumental masterwork examining how Western society shifted from a world where unbelief was virtually impossible to one where faith is one contested option among others.</p>
+<p>The Legitimacy of Modernity and the Secularization Debate: <a href="https://books.google.com/books?isbn=9780262521055" target="_blank" rel="noopener noreferrer">The Legitimacy of the Modern Age (Hans Blumenberg, Google Books)</a> - The foundational philosophical counterweight to Karl Löwith and Carl Schmitt, arguing that the modern era was not merely secularized Christian theology but an independent project of human self-assertion.</p>
+<p>Historiography of the Scientific Revolution: <a href="https://books.google.com/books?isbn=9780226750200" target="_blank" rel="noopener noreferrer">The Scientific Revolution (Steven Shapin, Google Books)</a> - The seminal sociological and contextual study that deconstructs the myth of an abrupt, unified rupture in early modern European scientific thought.</p>
+    </article>
+  </main>
+
+</body>
+</html>

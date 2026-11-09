@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+
+  <title>Projects</title>
+  <meta name="description" content="Projects curriculum by hocbigg.">
+  <meta name="author" content="hocbigg">
+
+  <link rel="canonical" href="https://hocbigg.github.io/intellectual-history/projects.html">
+  <meta property="og:title" content="Projects">
+  <meta property="og:description" content="Projects curriculum by hocbigg.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hocbigg.github.io/intellectual-history/projects.html">
+  <link rel="icon" href="https://hocbigg.github.io/images/favicon.ico">
+
+  <style>
+:root {
+  color-scheme: light dark;
+
+  --bg: #ffffff;
+  --fg: #1a1a1a;
+  --muted: #595959;
+  --border: #e0e0e0;
+  --th-bg: #f6f8fa;
+  --code-bg: #f4f4f4;
+  --link: #0969da;
+  --focus-ring: #0969da;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d1117;
+    --fg: #e6edf3;
+    --muted: #8b949e;
+    --border: #30363d;
+    --th-bg: #161b22;
+    --code-bg: #161b22;
+    --link: #58a6ff;
+    --focus-ring: #58a6ff;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 1.5rem auto;
+  max-width: 60rem;
+  padding: 0 1rem 3.5rem;
+  background-color: var(--bg);
+  color: var(--fg);
+  font: 1.15rem/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  
+  /* Cú pháp hiện đại thay thế cho word-wrap */
+  overflow-wrap: break-word;
+}
+
+.site-header {
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 0.5rem 1.25rem;
+  font-size: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+nav a:hover, 
+nav a:focus-visible {
+  color: var(--fg);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+nav .nav-brand {
+  color: var(--fg);
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+
+.skip-link {
+  position: absolute;
+  transform: translateY(-150%);
+  left: 1rem;
+  background: var(--fg);
+  color: var(--bg);
+  padding: 0.5rem 1rem;
+  z-index: 100;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(1rem);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.3;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--fg);
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 2rem;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid var(--border);
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1.15rem;
+}
+
+h6 {
+  font-size: 1rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+p, ul, ol, blockquote, table {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}
+
+li > ul,
+li > ol {
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+}
+
+li {
+  margin-bottom: 0.25rem;
+}
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+a:has(img) {
+  text-decoration: none;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.page-header .page-subtitle {
+  color: var(--muted);
+  font-size: 1.15rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.page-header img {
+  margin: 0 auto 1rem;
+  display: block;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.875em;
+  background-color: var(--code-bg);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+
+pre {
+  background-color: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  tab-size: 2;
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+  border: none;
+  font-size: 0.9rem;
+  border-radius: 0;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th, td {
+  border: 1px solid var(--border);
+  padding: 0.6rem 0.75rem;
+  vertical-align: top;
+}
+
+th {
+  background-color: var(--th-bg);
+  font-weight: 600;
+}
+
+blockquote {
+  margin-inline: 0;
+  border-left: 4px solid var(--border);
+  padding-left: 1rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  body {
+    max-width: none;
+    color: #000;
+    background: #fff;
+  }
+  .skip-link, nav {
+    display: none;
+  }
+}
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <nav aria-label="Main Navigation">
+    <ul>
+      <li><a href="https://hocbigg.github.io/" class="nav-brand">Hocbigg</a></li>
+      <li><a href="/intellectual-history/">Intellectual History</a></li>
+      <li><a href="/intellectual-history/advanced_topics.html">Advanced Topics</a></li>
+      <li><a href="/intellectual-history/projects.html">Projects</a></li>
+      <li><a href="https://github.com/hocbigg/intellectual-history" target="_blank" rel="noopener noreferrer">GitHub<span class="sr-only"> (opens in new tab)</span></a></li>
+    </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <article>
+
+<h1 id="projects">Projects</h1>
+<blockquote>
+<p>"What I cannot create, I do not understand." — Richard Feynman</p>
+</blockquote>
+<ul>
+<li><a href="#write-your-own-rhetorical-analyses">Rhetorical Analyses</a></li>
+<li><a href="#trace-your-own-conceptual-genealogies">Conceptual Genealogies</a></li>
+<li><a href="#curate-your-own-digital-exhibits">Digital Exhibits</a></li>
+<li><a href="#annotate-your-own-primary-texts">Annotated Primary Texts</a></li>
+<li><a href="#build-your-own-interactive-timelines">Interactive Timelines</a></li>
+<li><a href="#record-your-own-history-podcasts">History Podcasts</a></li>
+<li><a href="#publish-your-own-public-history-essays">Public History Essays</a></li>
+<li><a href="#write-your-own-scholarly-book-reviews">Scholarly Book Reviews</a></li>
+<li><a href="#draft-your-own-historiographical-research-papers">Historiographical Research Papers</a></li>
+</ul>
+<h2 id="write-your-own-rhetorical-analyses">Write your own rhetorical analyses</h2>
+<ul>
+<li><a href="https://www.brandeis.edu/writing-program/undergraduate/resources/student-writing-guides/close-reading.html" target="_blank" rel="noopener noreferrer">Close Reading: A Step-by-Step Guide (Brandeis University)</a> - A four-stage analytical workflow for breaking down syntax, tone, and rhetorical structure in source passages.</li>
+<li><a href="https://courses.bowdoin.edu/writing-guides/reading/how-to-read-a-primary-source/" target="_blank" rel="noopener noreferrer">How to Read a Primary Source (Patrick Rael, Bowdoin College)</a> - A foundational guide to evaluating historical texts through authorial intent, audience, and argumentative construction.</li>
+<li><a href="https://miamioh.edu/hcwe/handouts/rhetorical-analyses/index.html" target="_blank" rel="noopener noreferrer">Rhetorical Analyses Handout (Miami University Howe Center for Writing Excellence)</a> - A structured reference on evaluating rhetorical appeals (ethos, pathos, logos) and communicative purpose.</li>
+<li><a href="https://owl.purdue.edu/owl/subject_specific_writing/writing_in_literature/writing_about_fiction/close_reading_a_text_and_avoiding_pitfalls.html" target="_blank" rel="noopener noreferrer">Close Reading a Text and Avoiding Pitfalls (Purdue OWL)</a> - Practical instruction on annotating patterns, rhetorical devices, and historical assumptions without over-generalizing.</li>
+</ul>
+<h2 id="trace-your-own-conceptual-genealogies">Trace your own conceptual genealogies</h2>
+<ul>
+<li><a href="https://www.hf.uio.no/ikos/english/research/news-and-events/events/phd/2021/jordheim_conceptual-history_bloomsbury.pdf" target="_blank" rel="noopener noreferrer">Theory and Method: Conceptual History (Helge Jordheim, University of Oslo)</a> - A methodological breakdown of Reinhart Koselleck's <em>Begriffsgeschichte</em> and frameworks for tracing semantic shifts over time.</li>
+<li><a href="https://germanhistory-intersections.org/en/knowledge-and-education/ghis:document-129" target="_blank" rel="noopener noreferrer">Begriffsgeschichte and Social History (Reinhart Koselleck, German History Intersections)</a> - Koselleck's primary methodological text defining the distinction between words and concepts and their sociohistorical force.</li>
+</ul>
+<h2 id="curate-your-own-digital-exhibits">Curate your own digital exhibits</h2>
+<ul>
+<li><a href="https://programminghistorian.org/en/lessons/up-and-running-with-omeka" target="_blank" rel="noopener noreferrer">Up and Running with Omeka.net (Programming Historian)</a> - A peer-reviewed tutorial on creating digital archives, structuring item metadata, and organizing archival collections.</li>
+<li><a href="https://programminghistorian.org/en/lessons/creating-an-omeka-exhibit" target="_blank" rel="noopener noreferrer">Creating an Omeka Exhibit (Programming Historian)</a> - A step-by-step walkthrough for designing narrative pathways, section layouts, and contextual interpretative pages for primary documents.</li>
+<li><a href="https://programminghistorian.org/en/lessons/exhibition-with-collectionbuilder-internet-archive" target="_blank" rel="noopener noreferrer">Building a Digital Exhibition with CollectionBuilder and the Internet Archive (Programming Historian)</a> - A workflow for generating metadata-driven static web exhibits using open collections and GitHub.</li>
+</ul>
+<h2 id="annotate-your-own-primary-texts">Annotate your own primary texts</h2>
+<ul>
+<li><a href="https://recogito.pelagios.org/documentation/getting-started" target="_blank" rel="noopener noreferrer">10 Minute Tutorial: Recogito (Pelagios Network)</a> - A guide to semantic annotation, person/place tagging, and relationship-mapping across digitized texts and images.</li>
+<li><a href="https://programminghistorian.org/en/lessons/introduction-to-tei-1" target="_blank" rel="noopener noreferrer">Introduction to Encoding Texts in TEI (Programming Historian)</a> - A practical tutorial on marking up historical documents with XML-based Text Encoding Initiative (TEI) standards.</li>
+<li><a href="https://guides.library.cornell.edu/annotatedbibliography" target="_blank" rel="noopener noreferrer">How to Prepare an Annotated Bibliography (Cornell University Library)</a> - Instructions for summarizing, critically evaluating, and establishing the historiographical relevance of primary sources.</li>
+</ul>
+<h2 id="build-your-own-interactive-timelines">Build your own interactive timelines</h2>
+<ul>
+<li><a href="https://timeline.knightlab.com/" target="_blank" rel="noopener noreferrer">TimelineJS: Make a Timeline (Knight Lab)</a> - An open-source tool and template workflow for converting chronological source spreadsheets into interactive multimedia narratives.</li>
+<li><a href="https://timeline.knightlab.com/docs/using-spreadsheets.html" target="_blank" rel="noopener noreferrer">Making a Timeline from a Google Spreadsheet (Knight Lab)</a> - Documentation covering date formatting, era spans, media embeds, and event grouping for historical chronology projects.</li>
+</ul>
+<h2 id="record-your-own-history-podcasts">Record your own history podcasts</h2>
+<ul>
+<li><a href="https://www.npr.org/2018/11/15/662070097/starting-your-podcast-a-guide-for-students" target="_blank" rel="noopener noreferrer">Starting Your Podcast: A Guide for Students (NPR)</a> - A blueprint for producing narrative audio, covering story structure, scripting, interview techniques, and field recording.</li>
+<li><a href="https://www.nytimes.com/2018/04/19/learning/lesson-plans/project-audio-teaching-students-how-to-produce-their-own-podcasts.html" target="_blank" rel="noopener noreferrer">Project Audio: Teaching Students How to Produce Their Own Podcasts (The New York Times)</a> - A structured project unit breaking down voiceover narration, audio editing, and sound design workflows.</li>
+</ul>
+<h2 id="publish-your-own-public-history-essays">Publish your own public history essays</h2>
+<ul>
+<li><a href="https://thepanorama.shear.org/2024/07/08/writing-for-public-facing-digital-history-publications/" target="_blank" rel="noopener noreferrer">Writing for Public-Facing Digital History Publications: Some Tips &amp; Tricks (The Panorama)</a> - Guidance from journal editors on translating scholarly arguments into accessible, clear essays for non-academic readers.</li>
+<li><a href="https://www.oah.org/tah/issues/2016/november/writing-history-for-a-popular-audience-a-round-table/" target="_blank" rel="noopener noreferrer">Writing History for a Popular Audience: A Round Table (The American Historian / OAH)</a> - Practicing historians evaluate narrative craft, evidence presentation, and stylistic clarity outside the academy.</li>
+</ul>
+<h2 id="write-your-own-scholarly-book-reviews">Write your own scholarly book reviews</h2>
+<ul>
+<li><a href="https://history.uiowa.edu/resources/undergraduates/writing-guides/book-review" target="_blank" rel="noopener noreferrer">How to Write a History Book Review (University of Iowa History Department)</a> - A guide covering thesis identification, source evaluation, and assessing how a monograph contributes to broader historical debates.</li>
+<li><a href="https://writingcenter.unc.edu/tips-and-tools/book-reviews/" target="_blank" rel="noopener noreferrer">Book Reviews (UNC Writing Center)</a> - Structural blueprints and critical questions for evaluating nonfiction arguments and scholarly evidence.</li>
+<li><a href="https://www.wendybelcher.com/writing-advice/how-to-write-book-review/" target="_blank" rel="noopener noreferrer">How to Write an Academic Book Review (Wendy Laura Belcher)</a> - A professional step-by-step drafting schedule, outlining formula, and evaluation model by an academic editor.</li>
+<li><a href="https://www.carleton.edu/history/resources/history-study-guides/how-to-write-a-critical-book-review/" target="_blank" rel="noopener noreferrer">How to Write a Critical Book Review (Carleton College History Department)</a> - Specific criteria for examining a historian's methodological approach, use of primary evidence, and underlying interpretive bias.</li>
+</ul>
+<h2 id="draft-your-own-historiographical-research-papers">Draft your own historiographical research papers</h2>
+<ul>
+<li><a href="https://courses.bowdoin.edu/writing-guides/" target="_blank" rel="noopener noreferrer">Reading, Writing, and Researching for History: A Guide for College Students (Patrick Rael, Bowdoin College)</a> - A full guide to the research lifecycle, from interrogating sources and predatory reading to crafting historiographical interventions.</li>
+<li><a href="https://history.ucla.edu/steps-for-writing-a-history-paper/" target="_blank" rel="noopener noreferrer">Steps for Writing a History Paper (UCLA Department of History)</a> - A sequential workflow moving from topic selection and source interrogation to drafting and thesis argumentation.</li>
+<li><a href="https://www.carleton.edu/history/resources/history-research-paper/" target="_blank" rel="noopener noreferrer">How to Write a History Research Paper (Carleton College History Department)</a> - Walkthrough on structuring an extended historical research paper, outlining thematic sections, and managing citations.</li>
+<li><a href="https://hwpi.harvard.edu/files/hwp/files/bg_writing_history.pdf" target="_blank" rel="noopener noreferrer">A Brief Guide to Writing the History Paper (Harvard College Writing Center)</a> - Concise guidance on constructing evidence-backed historical claims, evaluating scholarly disagreements, and avoiding anachronism.</li>
+</ul>
+    </article>
+  </main>
+
+</body>
+</html>

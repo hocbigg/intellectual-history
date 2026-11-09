@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+
+  <title>Hocbigg - Intellectual History</title>
+  <meta name="description" content="Path to a free self-taught education in Intellectual History.">
+  <meta name="author" content="hocbigg">
+
+  <link rel="canonical" href="https://hocbigg.github.io/intellectual-history/">
+  <meta property="og:title" content="Hocbigg - Intellectual History">
+  <meta property="og:description" content="Path to a free self-taught education in Intellectual History.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hocbigg.github.io/intellectual-history/">
+  <link rel="icon" href="https://hocbigg.github.io/images/favicon.ico">
+
+  <style>
+:root {
+  color-scheme: light dark;
+
+  --bg: #ffffff;
+  --fg: #1a1a1a;
+  --muted: #595959;
+  --border: #e0e0e0;
+  --th-bg: #f6f8fa;
+  --code-bg: #f4f4f4;
+  --link: #0969da;
+  --focus-ring: #0969da;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d1117;
+    --fg: #e6edf3;
+    --muted: #8b949e;
+    --border: #30363d;
+    --th-bg: #161b22;
+    --code-bg: #161b22;
+    --link: #58a6ff;
+    --focus-ring: #58a6ff;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 1.5rem auto;
+  max-width: 60rem;
+  padding: 0 1rem 3.5rem;
+  background-color: var(--bg);
+  color: var(--fg);
+  font: 1.15rem/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  
+  /* Cú pháp hiện đại thay thế cho word-wrap */
+  overflow-wrap: break-word;
+}
+
+.site-header {
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 0.5rem 1.25rem;
+  font-size: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+nav a:hover, 
+nav a:focus-visible {
+  color: var(--fg);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+nav .nav-brand {
+  color: var(--fg);
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+
+.skip-link {
+  position: absolute;
+  transform: translateY(-150%);
+  left: 1rem;
+  background: var(--fg);
+  color: var(--bg);
+  padding: 0.5rem 1rem;
+  z-index: 100;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(1rem);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.3;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--fg);
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 2rem;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid var(--border);
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1.15rem;
+}
+
+h6 {
+  font-size: 1rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+p, ul, ol, blockquote, table {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}
+
+li > ul,
+li > ol {
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+}
+
+li {
+  margin-bottom: 0.25rem;
+}
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+a:has(img) {
+  text-decoration: none;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.page-header .page-subtitle {
+  color: var(--muted);
+  font-size: 1.15rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.page-header img {
+  margin: 0 auto 1rem;
+  display: block;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.875em;
+  background-color: var(--code-bg);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+
+pre {
+  background-color: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  tab-size: 2;
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+  border: none;
+  font-size: 0.9rem;
+  border-radius: 0;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th, td {
+  border: 1px solid var(--border);
+  padding: 0.6rem 0.75rem;
+  vertical-align: top;
+}
+
+th {
+  background-color: var(--th-bg);
+  font-weight: 600;
+}
+
+blockquote {
+  margin-inline: 0;
+  border-left: 4px solid var(--border);
+  padding-left: 1rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  body {
+    max-width: none;
+    color: #000;
+    background: #fff;
+  }
+  .skip-link, nav {
+    display: none;
+  }
+}
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <nav aria-label="Main Navigation">
+    <ul>
+      <li><a href="https://hocbigg.github.io/" class="nav-brand">Hocbigg</a></li>
+      <li><a href="/intellectual-history/">Intellectual History</a></li>
+      <li><a href="/intellectual-history/advanced_topics.html">Advanced Topics</a></li>
+      <li><a href="/intellectual-history/projects.html">Projects</a></li>
+      <li><a href="https://github.com/hocbigg/intellectual-history" target="_blank" rel="noopener noreferrer">GitHub<span class="sr-only"> (opens in new tab)</span></a></li>
+    </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <article>
+<header class="page-header">
+  <img src="/images/logo.png" alt="Hocbigg logo">
+  <h1>Hocbigg - Intellectual History</h1>
+  <p class="page-subtitle">Path to a free self-taught education in Intellectual History.</p>
+  <p class="last-updated"><small>Last updated on: <time datetime="2026-10-07">2026-10-07</time></small></p>
+</header>
+<h2 id="introduction">Introduction</h2>
+<p>Intellectual history examines what thinkers in the past argued, believed, and imagined, and how those ideas were shaped by—and in turn reshaped—their specific historical contexts. Rather than treating philosophical arguments as timeless abstractions floating above history, intellectual historians investigate ideas as historical actions. They ask what an author was trying to achieve in a particular moment, which conventional vocabularies they were responding to, and how the concepts we take for granted today—such as the state, liberty, secularism, or rights—were historically constructed. Studying this discipline teaches you to read texts in their historical environments and trains you to spot anachronism in contemporary political and philosophical debates.</p>
+<p>This curriculum is intended for independent learners with no prior formal training in intellectual history or academic philosophy. You do not need institutional access or advanced research training to begin; the material assumes only careful reading, critical curiosity, and an appetite for engaging with primary texts and historical contexts. </p>
+<h3 id="how-to-navigate-the-curriculum">How to Navigate the Curriculum</h3>
+<p>The curriculum is structured around a foundational methodology section followed by a chronological and comparative sequence:</p>
+<ul>
+<li><strong>Start with Foundations:</strong> Begin with the foundational methodology section. Understanding the distinction between Arthur Lovejoy’s tracing of long-range "unit-ideas" and Quentin Skinner’s contextualist approach is essential for reading historical sources responsibly.</li>
+<li><strong>Move chronologically through the Western lineage:</strong> Proceed through Ancient and Medieval Thought, Early Modern Thought, and Modern European Thought. These sections build sequentially on each other: early modern thinkers developed their natural philosophy and political models in explicit dialogue with ancient and scholastic frameworks, while nineteenth- and twentieth-century European theorists were directly interrogating Enlightenment assumptions.</li>
+<li><strong>Engage with Non-Western traditions:</strong> The section on Non-Western Intellectual Traditions can be studied alongside the chronological sequence or after it. It introduces classical Indian, Chinese, and Africana intellectual frameworks, ensuring you do not mistake European intellectual history for the universal history of human thought.</li>
+</ul>
+<h3 id="scope">Scope</h3>
+<p>This core guide provides the foundational interpretive methods, key historical transitions, and central debates necessary for basic literacy in the discipline. It does not attempt to cover every regional tradition or specialized subfield. </p>
+<p>Once you have completed this foundational study, you can deepen your knowledge across the other pages in this series:</p>
+<ul>
+<li>Explore specialized methodological debates, imperial ideologies, and the history of science in <a href="advanced_topics.html">Advanced Topics</a>.</li>
+<li>Apply historical methods by building annotated editions, conceptual genealogies, and exhibits in <a href="projects.html">Projects</a>.</li>
+</ul>
+<h2 id="curriculum">Curriculum</h2>
+<h3 id="foundations-of-intellectual-history">Foundations of Intellectual History</h3>
+<p>This subject introduces the methodology, historiography, and core interpretive frameworks of intellectual history, focusing on the debate between Lovejoy's unit-ideas and Cambridge School contextualism.</p>
+<p><a href="https://archive.org/details/whatisintellectu0000what" target="_blank" rel="noopener noreferrer">What is Intellectual History? - Richard Whatmore (Internet Archive)</a> - Serves as the primary introductory primer, offering an accessible survey of modern methodological debates, the linguistic turn, and different national traditions.</p>
+<p><a href="https://archive.org/details/descentofideashi0000kell" target="_blank" rel="noopener noreferrer">The Descent of Ideas: The History of Intellectual History - Donald R. Kelley (Internet Archive)</a> - Acts as an in-depth historical complement to Whatmore, tracing how scholars have conceptualized and studied the history of human thought from antiquity through the twentieth century.</p>
+<p><a href="https://archive.org/details/greatchainofbein0000love_b9m4" target="_blank" rel="noopener noreferrer">The Great Chain of Being: A Study of the History of an Idea - Arthur O. Lovejoy (Internet Archive)</a> - A foundational seminal text illustrating the traditional "history of ideas" approach by tracking a single metaphysical premise across two millennia.</p>
+<p>Quentin Skinner, "Meaning and Understanding in the History of Ideas," History and Theory 8, no. 1 (1969) - Read directly after Lovejoy as the classic manifesto of Cambridge School contextualism, demonstrating why texts must be interpreted as historical speech acts within specific linguistic conventions.</p>
+<p><a href="https://armitage.scholars.harvard.edu/publications/whats-big-idea-intellectual-history-and-longue-dur%C3%A9e" target="_blank" rel="noopener noreferrer">What's the Big Idea? Intellectual History and the Longue Durée - David Armitage (Harvard University)</a> - Builds on the Lovejoy-Skinner debate by proposing a contemporary methodological synthesis that reconciles contextual rigor with long-range historical trajectories.</p>
+<h3 id="ancient-and-medieval-thought">Ancient and Medieval Thought</h3>
+<p>This subject examines foundational Mediterranean and European intellectual traditions from classical Greek philosophy through late antique theology and medieval scholasticism.</p>
+<p><a href="https://historyofphilosophy.net" target="_blank" rel="noopener noreferrer">History of Philosophy Without Any Gaps - Peter Adamson</a> - Serves as the core chronological audio spine, delivering detailed sequential lectures across classical, Hellenistic, Roman, late antique, Byzantine, and medieval scholastic thought.</p>
+<p><a href="https://archive.org/details/readingsinancien0000unse_y2y7" target="_blank" rel="noopener noreferrer">Readings in Ancient Greek Philosophy: From Thales to Aristotle - S. Marc Cohen, Patricia Curd, and C.D.C. Reeve, eds. (Internet Archive)</a> - A complementary primary-source reader with extensive introductory apparatus, designed to be studied alongside the ancient episodes of the Adamson podcast.</p>
+<p><a href="https://archive.org/details/makingofmiddleag00sout" target="_blank" rel="noopener noreferrer">The Making of the Middle Ages - R.W. Southern (Internet Archive)</a> - Provides crucial historical and cultural context for medieval intellectual life, charting the transformation from monastic contemplation to scholastic logic and the birth of universities.</p>
+<h3 id="early-modern-thought-renaissance-scientific-revolution-and-enlightenment">Early Modern Thought: Renaissance, Scientific Revolution, and Enlightenment</h3>
+<p>This subject charts the intellectual transformation of Europe from roughly 1450 to 1800, focusing on the rise of the new natural sciences, modern political theory, and Enlightenment philosophy.</p>
+<p><a href="https://ocw.mit.edu/courses/sts-002-toward-the-scientific-revolution-fall-2003/" target="_blank" rel="noopener noreferrer">Toward the Scientific Revolution - David Kaiser (MIT OpenCourseWare, STS.002)</a> - A structured open course syllabus and reading program tracing how changes in astronomy, physics, and natural philosophy restructured the European worldview.</p>
+<p><a href="https://www.youtube.com/playlist?list=PL111A2F8C0E60457D" target="_blank" rel="noopener noreferrer">General Philosophy - Peter Millican (University of Oxford, YouTube)</a> - Complements Kaiser by delivering a full undergraduate lecture course on early modern metaphysics and epistemology, focusing on Descartes, Locke, Berkeley, and Hume.</p>
+<p><a href="https://www.youtube.com/playlist?list=PL2FD48CE33DFBEA7E" target="_blank" rel="noopener noreferrer">The Moral Foundations of Politics - Ian Shapiro (Yale University, YouTube)</a> - Completes the early modern survey by analyzing the development of Enlightenment social contract theory and political legitimacy from Hobbes and Locke through their modern critics.</p>
+<h3 id="modern-european-thought">Modern European Thought</h3>
+<p>This subject surveys the major currents of European thought from the French Revolution to the late twentieth century, spanning German idealism, Marxism, existentialism, and post-structuralism.</p>
+<p><a href="https://archive.org/details/europeanintellec0000stro" target="_blank" rel="noopener noreferrer">European Intellectual History Since 1789 - Roland N. Stromberg (Internet Archive)</a> - The foundational narrative textbook for this period, offering essential coverage of Romanticism, Hegelianism, Marxism, Darwinian thought, and early twentieth-century modernism.</p>
+<p><a href="https://www.youtube.com/playlist?list=PLh9mgdi4rNezUjm7niGdUWjnL0lHSDh0U" target="_blank" rel="noopener noreferrer">European Intellectual History since Nietzsche - Marci Shore (Yale University, YouTube)</a> - Builds directly upon Stromberg's survey with an in-depth recorded lecture series analyzing twentieth-century existentialism, phenomenology, totalitarianism, and post-structuralist thought.</p>
+<h3 id="non-western-intellectual-traditions">Non-Western Intellectual Traditions</h3>
+<p>This subject explores the classical philosophical frameworks, religious traditions, and political ideas of India, China, and the Africana intellectual tradition.</p>
+<p><a href="https://historyofphilosophy.net" target="_blank" rel="noopener noreferrer">History of Philosophy Without Any Gaps: Global Series - Peter Adamson</a> - Serves as the primary audio lecture spine for non-Western traditions, providing dedicated sequential series on classical Indian, classical Chinese, and Africana philosophical thought.</p>
+<p><a href="https://archive.org/details/sourcesofchinese0000deba" target="_blank" rel="noopener noreferrer">Sources of Chinese Tradition, Volume 1: From Earliest Times to 1600 - Wm. Theodore de Bary and Irene Bloom (Internet Archive)</a> - A canonical guided sourcebook with critical introductions and translations, designed to be read alongside the Chinese philosophy lecture series.</p>
+<p><a href="https://books.google.com/books?isbn=9780231066518" target="_blank" rel="noopener noreferrer">Sources of Indian Tradition, Volume 1: From the Beginning to 1800 - Ainslie T. Embree (Google Books)</a> - A companion guided sourcebook providing contextual introductions and translated core texts to accompany the Indian philosophy audio lectures.</p>
+    </article>
+  </main>
+
+</body>
+</html>
